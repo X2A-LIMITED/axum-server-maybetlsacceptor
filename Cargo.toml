@@ -1,0 +1,33 @@
+[package]
+name = "axum-server-maybetlsacceptor"
+version = "0.7.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+description = "axum-server-compatible enum that lets you easily accepts connections with or without TLS."
+repository = "https://github.com/X2A-LIMITED/axum-server-maybetlsacceptor"
+
+[features]
+default = []
+rustls = ["axum-server/tls-rustls"]
+openssl = ["axum-server/tls-openssl"]
+
+[dependencies]
+axum-server = { version = "0.7", default-features = false, features = [] }
+tokio = { version = "1", default-features = false }
+pin-project = { version = "1", default-features = false }
+
+[dev-dependencies]
+anyhow = { version = "1", default-features = false }
+axum = { version = "0.8", default-features = false }
+axum-server = { version = "0.7", default-features = false, features = ["tls-rustls"] }
+tokio = { version = "1", default-features = false, features = ["rt"] }
+rustls = { version = "0.23", default-features = false, features = ["aws_lc_rs"] }
+
+[[example]]
+name = "basic"
+required-features = ["rustls"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
