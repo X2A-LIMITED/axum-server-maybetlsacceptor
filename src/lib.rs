@@ -16,7 +16,7 @@
 //!
 //! ## Compatibility
 //!
-//! Version `0.7.x` is compatible with [axum-server] version `0.7.y`.
+//! Version `0.8.x` is compatible with [axum-server] version `0.8.y`.
 //!
 //! This crate's versioning will try to follow [axum-server]'s major versioning
 //! (or minor while being unstable `0.x.y`).
